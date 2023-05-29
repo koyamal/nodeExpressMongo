@@ -5,5 +5,5 @@ fs.readFile("./data/sample.json", "utf-8", (error, data) => {
     console.log(error);
     return;
   }
-  console.log(data);
+  console.log("data: ", data);
 });
