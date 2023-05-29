@@ -1,7 +1,7 @@
 const fs = require("fs");
 process.chdir(__dirname);
 
-fs.readFile("./samples.json", "utf-8", (error, data) => {
+fs.readFile("./sample.json", "utf-8", (error, data) => {
   console.log("Inside readFile");
   if(error){
     console.log(error);
