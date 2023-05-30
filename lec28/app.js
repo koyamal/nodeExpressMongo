@@ -1,13 +1,8 @@
 const express = require("express");
 const app = express();
 
-app.get("/home/index", (req, res) => {
-  res.status(200).send("Hello, Express. /home/index");
-});
+const userRouter = require("./user.js");
 
-app.get("/user/:id", (req, res) => {
-  console.log(req.params.id);
-  res.status(200).send(`Hello, Express. /user/${req.params.id}`);
-})
+app.use("/user", userRouter);
 
 app.listen(3000);

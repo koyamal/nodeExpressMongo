@@ -6,11 +6,11 @@ router.use((req, res, next) => {
 });
 
 router.get("/", (req, res) => {
-  res.send("/");
+  res.send("[ / ]");
 });
 
 router.get("/about", (req, res) => {
-  res.send("/about");
+  res.send("[ /about ]");
 });
 
 module.exports = router;
