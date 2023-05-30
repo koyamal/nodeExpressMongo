@@ -7,3 +7,8 @@
   const module2 = require("./module-2");
   console.log(module2);
 })();
+
+(function() {
+  const module3 = require("./module-3");
+  console.log(module3.square());
+})();
