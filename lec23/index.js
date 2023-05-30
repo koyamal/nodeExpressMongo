@@ -18,3 +18,11 @@
   const obj = new module4();
   console.log(obj.area());
 })();
+
+(function() {
+  const { Square, Triangle } = require("./module-5");
+  const squ = new Square();
+  const tri = new Triangle();
+  console.log(squ.area());
+  console.log(tri.area());
+})();
