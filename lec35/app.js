@@ -17,7 +17,7 @@ app.post("/", (req, res) => {
   console.log(req.body.frm_text);
   const data = {
     frm_text: req.body.frm_text,
-    frm_chkbx: req.body.frm_chkbx || null,
+    frm_chkbx: req.body.frm_chkbx || "off",
   }
   res.render("showBody.ejs", data);
   // res.send(`text: ${req.body.frm_text} chkbx: ${req.body.frm_chkbx}`);
