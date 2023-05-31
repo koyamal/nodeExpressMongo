@@ -12,7 +12,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  res.send("OK!!");
+  console.log(req.body);
+  console.log(req.body.frm_chkbx);
+  console.log(req.body.frm_text);
+  res.send(`text: ${req.body.frm_text} chkbx: ${req.body.frm_chkbx}`);
 });
 
 app.listen(3000);
