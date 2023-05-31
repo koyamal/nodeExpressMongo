@@ -2,9 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-app.set('views', './views');
-console.log(__dirname);
-console.log(process.cwd());
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true}));
