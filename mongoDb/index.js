@@ -6,9 +6,8 @@ const client = new MongoClient(url);
 async function run() {
   try{
     const db = client.db("sample");
-    db.createCollection("nodejs", (error, collection) => {
-      client.close();
-    });
+    const data = await db.listCollections();
+    console.log(data);
     console.log("get db");
   } finally {
     console.log("finally");
