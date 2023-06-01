@@ -7,7 +7,7 @@ async function run() {
   try{
     const db = client.db("sample");
     const products = db.collection("products");
-    const query = {name: "pen"};
+    const query = {name: "pencil"};
     const result = await products.deleteOne(query);
     console.log(result);
   } finally {
