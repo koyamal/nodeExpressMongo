@@ -6,9 +6,13 @@ const client = new MongoClient(url);
 async function run() {
   try{
     const db = client.db("sample");
-    const data = await db.listCollections();
-    console.log(data);
-    console.log("get db");
+    const products = db.collection("products");
+    const doc = {
+      name: "pencil",
+      price: 110,
+    };
+    const result = await products.insertOne(doc);
+    console.log(`id: ${result.insertedId}`);
   } finally {
     console.log("finally");
   }
