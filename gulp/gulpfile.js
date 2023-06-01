@@ -1,5 +1,11 @@
 const gulp = require("gulp");
 
-gulp.task("default", () => {
-  console.log("Hello, World.");
+gulp.task("a", () => {
+  console.log("a");
 });
+
+gulp.task("b", () => {
+  console.log("b");
+});
+
+// gulp.task("default", ["a", "b"]);
