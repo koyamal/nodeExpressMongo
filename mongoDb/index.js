@@ -7,15 +7,8 @@ async function run() {
   try{
     const db = client.db("sample");
     const products = db.collection("products");
-    const filter = {name: "pen"};
-    const options = { upsert: true };
-    const updateDoc = {
-      $set: {
-        price: 1330,
-      }
-    }
-    const result = await products.updateOne(filter, updateDoc, options);
-    console.log(`${result.matchedCount}  ${result.modifiedCount}`);
+    const query = {name: "pen"};
+    const result = await products.deleteOne(query);
     console.log(result);
   } finally {
     console.log("finally");
