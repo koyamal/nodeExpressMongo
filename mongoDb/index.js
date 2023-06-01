@@ -7,12 +7,10 @@ async function run() {
   try{
     const db = client.db("sample");
     const products = db.collection("products");
-    const doc = {
-      name: "pencil",
-      price: 110,
-    };
-    const result = await products.insertOne(doc);
-    console.log(`id: ${result.insertedId}`);
+    const query = {name: "pen"};
+
+    const pen = await products.findOne(query);
+    console.log(pen);
   } finally {
     console.log("finally");
   }
