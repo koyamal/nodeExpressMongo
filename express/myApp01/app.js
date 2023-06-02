@@ -10,4 +10,8 @@ app.post("/", (req, res) => {
   res.send("Hello, Express: POST");
 });
 
+app.put("/", (req, res) => {
+  res.send("Hello, Express: PUT");
+});
+
 app.listen(3000);
