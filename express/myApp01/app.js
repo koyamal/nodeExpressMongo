@@ -14,4 +14,8 @@ app.put("/", (req, res) => {
   res.send("Hello, Express: PUT");
 });
 
+app.delete("/", (req, res) => {
+  res.send("Hello, Express: GELETE");
+});
+
 app.listen(3000);
