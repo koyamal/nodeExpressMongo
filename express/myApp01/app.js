@@ -33,18 +33,28 @@ app.delete("/", (req, res) => {
 //   res.send('/a/');
 // });
 
-app.get('/users/:userId/books/:bookId', (req, res) => {
-  res.send(req.params);
-  // res.send(req.params.userId);
-  // res.send(req.params.bookId);
+// app.get('/users/:userId/books/:bookId', (req, res) => {
+//   res.send(req.params);
+//   // res.send(req.params.userId);
+//   // res.send(req.params.bookId);
+// });
+
+// app.get("/flights/:from-:to", (req, res) => {
+//   res.send(req.params);
+// });
+
+// app.get("/name/:first.:last", (req, res) => {
+//   res.send(req.params);
+// });
+
+app.get("/example/a", (req, res) => {
+  res.send("This is A");
 });
 
-app.get("/flights/:from-:to", (req, res) => {
-  res.send(req.params);
+app.get("/example/b", (req, res, next) => {
+  console.log("B is called..");
+  next();
+}, (req, res) => {
+  res.send("This is B");
 });
-
-app.get("/name/:first.:last", (req, res) => {
-  res.send(req.params);
-});
-
 app.listen(3000);
