@@ -21,4 +21,8 @@ app.delete("/", (req, res) => {
   res.send("Hello, Express: GELETE");
 });
 
+app.get('/ab+cd', (req, res) => {
+  res.send('/ab+cd');
+});
+
 app.listen(3000);
