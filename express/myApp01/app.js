@@ -1,8 +1,9 @@
 const express = require("express");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 
-const birdsRouter = require("./routes/birds");
-const cookieValidator = require('./mid/cookieValidator');
+// const birdsRouter = require("./routes/birds");
+// const cookieValidator = require('./mid/cookieValidator');
+const addNumber = require("./mid/addNumber");
 
 const app = express();
 
@@ -85,35 +86,40 @@ const app = express();
 
 // app.use("/birds", birdsRouter);
 
-const myLogger = function(req, res, next) {
-  console.log('LOGGED');
-  next();
-};
+// const myLogger = function(req, res, next) {
+//   console.log('LOGGED');
+//   next();
+// };
 
-const requestTime = function(req, res, next) {
-  req.requestTime = Date.now();
-  next();
-}
+// const requestTime = function(req, res, next) {
+//   req.requestTime = Date.now();
+//   next();
+// }
 
-async function validateCookies (req, res, next) {
-  await cookieValidator(req.cookies);
-  next();
-}
+// async function validateCookies (req, res, next) {
+//   await cookieValidator(req.cookies);
+//   next();
+// }
 
-app.use(cookieParser());
-app.use(validateCookies);
+// app.use(cookieParser());
+// app.use(validateCookies);
 
-app.use((err, req, res, next) => {
-  res.status(400).send(err.message);
-})
+// app.use((err, req, res, next) => {
+//   res.status(400).send(err.message);
+// })
 
-app.use(myLogger);
-app.use(requestTime);
+// app.use(myLogger);
+// app.use(requestTime);
 
-app.get("/", (req, res) => {
-  let resText = "Hello, World.<br>";
-  resText = `Requested at: ${req.requestTime}`;
-  res.send(resText);
-});
+// app.get("/", (req, res) => {
+//   let resText = "Hello, World.<br>";
+//   resText = `Requested at: ${req.requestTime}`;
+//   res.send(resText);
+// });
+
+app.use(addNumber({ number: 10}));
+app.use(addNumber({ number: 100}));
+
+app.get("/", (req, res) => { res.send("Hello, World.")});
 
 app.listen(3000);
