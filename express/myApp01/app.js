@@ -88,10 +88,10 @@ const myLogger = function(req, res, next) {
   next();
 }
 
-app.use(myLogger);
-
 app.get("/", (req, res) => {
   res.send("Hello, World");
 });
+
+app.use(myLogger);
 
 app.listen(3000);
