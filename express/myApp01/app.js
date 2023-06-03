@@ -39,4 +39,12 @@ app.get('/users/:userId/books/:bookId', (req, res) => {
   // res.send(req.params.bookId);
 });
 
+app.get("/flights/:from-:to", (req, res) => {
+  res.send(req.params);
+});
+
+app.get("/name/:first.:last", (req, res) => {
+  res.send(req.params);
+});
+
 app.listen(3000);
