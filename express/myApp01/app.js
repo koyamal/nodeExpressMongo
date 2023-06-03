@@ -57,4 +57,20 @@ app.get("/example/b", (req, res, next) => {
 }, (req, res) => {
   res.send("This is B");
 });
+
+const fn0 = function(req, res, next) {
+  console.log("fn0 is called..");
+  next();
+};
+
+const fn1 = function(req, res, next) {
+  console.log("fn1 is called..");
+  next();
+};
+
+const fn2 = function(req, res) {
+  res.send("This is C");
+};
+
+app.get("/example/c", [fn0, fn1, fn2]);
 app.listen(3000);
