@@ -86,12 +86,20 @@ const app = express();
 const myLogger = function(req, res, next) {
   console.log('LOGGED');
   next();
+};
+
+const requestTime = function(req, res, next) {
+  req.requestTime = Date.now();
+  next();
 }
 
-app.get("/", (req, res) => {
-  res.send("Hello, World");
-});
-
 app.use(myLogger);
+app.use(requestTime);
+
+app.get("/", (req, res) => {
+  let resText = "Hello, World.<br>";
+  resText = `Requested at: ${req.requestTime}`;
+  res.send(resText);
+});
 
 app.listen(3000);
