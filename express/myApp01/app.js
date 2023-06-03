@@ -1,5 +1,7 @@
 const express = require("express");
 
+const birdsRouter = require("./routes/birds");
+
 const app = express();
 
 app.use('/static', express.static('public'));
@@ -74,8 +76,11 @@ app.delete("/", (req, res) => {
 
 // app.get("/example/c", [fn0, fn1, fn2]);
 
-app.route("/book")
-  .get((req, res) => { res.send("GET"); })
-  .post((req, res) => { res.send("POST"); })
-  .put((req, res) => { res.send("PUT"); });
+// app.route("/book")
+//   .get((req, res) => { res.send("GET"); })
+//   .post((req, res) => { res.send("POST"); })
+//   .put((req, res) => { res.send("PUT"); });
+
+app.use("/birds", birdsRouter);
+
 app.listen(3000);
