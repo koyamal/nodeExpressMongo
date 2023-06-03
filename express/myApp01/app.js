@@ -29,4 +29,8 @@ app.get('/ab*cd', (req, res) => {
   res.send('/ab*cd');
 });
 
+app.get(/a/, (req, res) => {
+  res.send('/a/');
+});
+
 app.listen(3000);
