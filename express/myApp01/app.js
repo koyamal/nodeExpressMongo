@@ -47,30 +47,35 @@ app.delete("/", (req, res) => {
 //   res.send(req.params);
 // });
 
-app.get("/example/a", (req, res) => {
-  res.send("This is A");
-});
+// app.get("/example/a", (req, res) => {
+//   res.send("This is A");
+// });
 
-app.get("/example/b", (req, res, next) => {
-  console.log("B is called..");
-  next();
-}, (req, res) => {
-  res.send("This is B");
-});
+// app.get("/example/b", (req, res, next) => {
+//   console.log("B is called..");
+//   next();
+// }, (req, res) => {
+//   res.send("This is B");
+// });
 
-const fn0 = function(req, res, next) {
-  console.log("fn0 is called..");
-  next();
-};
+// const fn0 = function(req, res, next) {
+//   console.log("fn0 is called..");
+//   next();
+// };
 
-const fn1 = function(req, res, next) {
-  console.log("fn1 is called..");
-  next();
-};
+// const fn1 = function(req, res, next) {
+//   console.log("fn1 is called..");
+//   next();
+// };
 
-const fn2 = function(req, res) {
-  res.send("This is C");
-};
+// const fn2 = function(req, res) {
+//   res.send("This is C");
+// };
 
-app.get("/example/c", [fn0, fn1, fn2]);
+// app.get("/example/c", [fn0, fn1, fn2]);
+
+app.route("/book")
+  .get((req, res) => { res.send("GET"); })
+  .post((req, res) => { res.send("POST"); })
+  .put((req, res) => { res.send("PUT"); });
 app.listen(3000);
