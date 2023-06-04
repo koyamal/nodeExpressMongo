@@ -122,4 +122,8 @@ const app = express();
 
 app.get("/", (req, res) => { res.send("Hello, World.")});
 
+app.get("/user/home", (req, res) => {
+  res.send("This is user home page");
+})
+
 app.listen(3000);
