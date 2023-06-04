@@ -91,10 +91,10 @@ const app = express();
 //   next();
 // };
 
-// const requestTime = function(req, res, next) {
-//   req.requestTime = Date.now();
-//   next();
-// }
+const requestTime = function(req, res, next) {
+  req.requestTime = Date.now();
+  next();
+}
 
 // async function validateCookies (req, res, next) {
 //   await cookieValidator(req.cookies);
@@ -109,7 +109,7 @@ const app = express();
 // })
 
 // app.use(myLogger);
-// app.use(requestTime);
+app.use(requestTime);
 
 // app.get("/", (req, res) => {
 //   let resText = "Hello, World.<br>";
