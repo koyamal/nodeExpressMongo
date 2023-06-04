@@ -3,7 +3,7 @@ const express = require("express");
 
 // const birdsRouter = require("./routes/birds");
 // const cookieValidator = require('./mid/cookieValidator');
-const addNumber = require("./mid/addNumber");
+// const addNumber = require("./mid/addNumber");
 
 const app = express();
 
@@ -117,8 +117,8 @@ const app = express();
 //   res.send(resText);
 // });
 
-app.use(addNumber({ number: 10}));
-app.use(addNumber({ number: 100}));
+// app.use(addNumber({ number: 10}));
+// app.use(addNumber({ number: 100}));
 
 app.get("/", (req, res) => { res.send("Hello, World.")});
 
