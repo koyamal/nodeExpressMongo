@@ -86,13 +86,14 @@ const app = express();
 
 // app.use("/birds", birdsRouter);
 
-// const myLogger = function(req, res, next) {
-//   console.log('LOGGED');
-//   next();
-// };
+const myLogger = function(req, res, next) {
+  console.log('LOGGED');
+  next();
+};
 
 const requestTime = function(req, res, next) {
   req.requestTime = Date.now();
+  console.log("requestTime");
   next();
 }
 
@@ -108,7 +109,7 @@ const requestTime = function(req, res, next) {
 //   res.status(400).send(err.message);
 // })
 
-// app.use(myLogger);
+app.use(myLogger);
 app.use(requestTime);
 
 // app.get("/", (req, res) => {
