@@ -36,4 +36,24 @@ app.get("/home/:id", (req, res) => {
   res.send("0");
 });
 
+let rand = 0;
+
+app.use("/lottery", (req, res, next) => {
+  const range = 10;
+  rand = Math.floor(Math.random() * (range + 1));
+  next();
+});
+
+app.get("/lottery", (req, res, next) => {
+  rand === 1? next("route"): next();
+}, (req, res) => {
+  console.log(rand);
+  res.send("残念、、はずれ");
+});
+
+app.get("/lottery", (req, res) => {
+  console.log(rand);
+  res.send("おめでとう！！あたり");
+});
+
 app.listen(3000);
