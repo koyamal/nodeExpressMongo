@@ -26,6 +26,9 @@ app.get("/user/:id", (req, res) => {
 app.get("/home/:id", (req, res, next) => {
   req.params.id === '0'? next('route'): next();
 }, (req, res, next) => {
+  console.log("hello");
+  next();
+},(req, res, next) => {
   res.send('not 0');
 });
 
