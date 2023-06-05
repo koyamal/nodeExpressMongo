@@ -17,13 +17,23 @@ const app = express();
 //   })
 // });
 
-app.get('/', [
-  function (req, res, next) {
-    fs.writeFile('/inaccessible-path', 'data', next)
-  },
-  function (req, res) {
-    res.send('OK')
-  }
-]);
+// app.get('/', [
+//   function (req, res, next) {
+//     fs.writeFile('/inaccessible-path', 'data', next)
+//   },
+//   function (req, res) {
+//     res.send('OK')
+//   }
+// ])
+
+app.get('/', (req, res, next) => {
+  setTimeout(() => {
+    try {
+      throw new Error('BROKEN')
+    } catch (err) {
+      next(err)
+    }
+  }, 1000)
+})
 
 app.listen(3000);
