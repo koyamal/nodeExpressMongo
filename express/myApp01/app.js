@@ -10,6 +10,9 @@ app.use((req, res, next) => {
 app.use("/user/:id", (req, res, next) => {
   console.log("Request Type: ", req.method);
   next();
+}, (req, res, next) => {
+  console.log("Request URL: ", req.originalUrl);
+  next();
 });
 
 app.get("/", (req, res) => {
