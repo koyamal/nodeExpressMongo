@@ -12,7 +12,7 @@ app.use("/user/:id", (req, res, next) => {
   next();
 }, (req, res, next) => {
   console.log("Request URL: ", req.originalUrl);
-  next();
+  res.send("User Info.");
 });
 
 app.get("/", (req, res) => {
