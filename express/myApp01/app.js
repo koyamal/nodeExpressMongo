@@ -28,11 +28,7 @@ const app = express();
 
 app.get('/', (req, res, next) => {
   setTimeout(() => {
-    try {
-      throw new Error('BROKEN')
-    } catch (err) {
-      next(err)
-    }
+      throw new Error('BROKEN');
   }, 1000)
 })
 
