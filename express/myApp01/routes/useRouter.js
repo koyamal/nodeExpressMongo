@@ -5,8 +5,8 @@ const router = express.Router();
 router.get("/user/:id", (req, res, next) => {
   if (req.params.id === '0') {
     console.log("next('route(r)'");
-    next("route");
-    // next("router");
+    // next("route");
+    next("router");
   }
   else next()
 }, (req, res, next) => {
@@ -15,7 +15,7 @@ router.get("/user/:id", (req, res, next) => {
 });
 
 router.get("/user/:id", (req, res, next) => {
-  res.send("hello, user!");
+  res.send("next('route')");
 });
 
 module.exports = router;
