@@ -1,4 +1,19 @@
-const boolArray: boolean[] = [false, true];
+interface Name {
+  first: string;
+  second: string;
+};
 
-boolArray[0] = true;
-// boolArray[1] = "false";
+let name1: Name;
+name1 = {
+  first: "John",
+  second: "Doe"
+};
+
+name1 = {
+  first: "John"
+}
+
+name1 = {
+  first: "John",
+  second: 1234,
+}
