@@ -1,6 +1,6 @@
 const num: number = 1234;
-function identity(num: number): number {
-  return num;
+function identity(num: number, num2: number): number {
+  return num + num2;
 }
 
-console.log(identity(num));
+console.log(identity(num, 3));
