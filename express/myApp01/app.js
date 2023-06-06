@@ -26,10 +26,10 @@ const app = express();
 //   }
 // ])
 
-app.get('/', (req, res, next) => {
-  setTimeout(() => {
-      throw new Error('BROKEN');
-  }, 1000)
-})
+app.get("/", (req, res, next) => {
+  Promise.resolve().then(() => {
+    throw new Error("BROKEN");
+  }).catch(next);
+});
 
 app.listen(3000);
