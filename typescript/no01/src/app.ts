@@ -31,5 +31,23 @@ iTakePoint2D(point3D);
 // num2 = "hello";
 // console.log(num2);
 
-console.log(0 == "");
-console.log(0 === "");
+// console.log(0 == "");
+// console.log(0 === "");
+
+function createCounter() {
+  let val = 0;
+  return {
+    increment() { val++ },
+    getVal() { return val }
+  }
+}
+
+const counter1 = createCounter();
+const counter2 = createCounter();
+
+console.log("1:", counter1.getVal());
+console.log("2:", counter2.getVal());
+
+counter1.increment();
+console.log("1:", counter1.getVal());
+console.log("2:", counter2.getVal());
