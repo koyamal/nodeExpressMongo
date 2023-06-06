@@ -26,3 +26,7 @@ function iTakePoint2D(point: Point2D) {
 iTakePoint2D(point2D);
 iTakePoint2D(point3D);
 // iTakePoint2D({ x: 20 });
+
+let num2 = 100;
+// num2 = "hello";
+console.log(num2);
