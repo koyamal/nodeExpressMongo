@@ -1,9 +1,8 @@
-interface Name {
+let name1: {
   first: string;
   second: string;
 };
 
-let name1: Name;
 name1 = {
   first: "John",
   second: "Doe"
