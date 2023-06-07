@@ -1,7 +1,9 @@
-type StrorNum = string | number;
+function sumNumber(numArray: number[]): number {
+  let sumValue: number = 0;
+  numArray.forEach((val) => {
+    sumValue += val;
+  });
+  return sumValue;
+}
 
-let sample: StrorNum;
-sample = 123;
-sample = "123";
-
-sample = true;
+console.log(sumNumber([1, 2, 3, 4, 5]));
