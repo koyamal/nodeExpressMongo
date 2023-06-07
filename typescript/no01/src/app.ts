@@ -1,5 +1,5 @@
-let num: number;
-let str: string;
+function log(message: string): void {
+  console.log(message);
+}
 
-num = null;
-str = undefined;
+log("Hello");
