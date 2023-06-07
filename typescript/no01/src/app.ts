@@ -1,5 +1,7 @@
-let nameNumber: [string, number];
+type StrorNum = string | number;
 
-nameNumber = ["Jenny", 4534234543];
+let sample: StrorNum;
+sample = 123;
+sample = "123";
 
-nameNumber = ["Jenny", "4232342"];
+sample = true;
