@@ -11,4 +11,15 @@ const reversed = reverse(sample);
 
 console.log(reversed);
 
-reversed[1] = "a";
+reversed[0] = 10;
+// reversed[1] = "a";
+
+const sample2 = ["1", "2", "3"];
+const reversed2 = reverse(sample2);
+
+console.log(reversed2);
+
+reversed2[1] = "a";
+reversed2[2] = 2;
+
+
