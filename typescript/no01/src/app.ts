@@ -1,7 +1,5 @@
-function extend<T, U>(first: T, second: U): T & U {
-  return { ...first, ...second};
-}
+let nameNumber: [string, number];
 
-const x = extend({ a: "Hello" }, { b: 42 });
-console.log(x.a);
-console.log(x.b);
+nameNumber = ["Jenny", 4534234543];
+
+nameNumber = ["Jenny", "4232342"];
