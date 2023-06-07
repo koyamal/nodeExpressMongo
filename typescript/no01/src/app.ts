@@ -7,6 +7,7 @@ function sumNumber(numArray: number[]): number {
 }
 
 console.log(sumNumber([1, 2, 3, 4, 5]));
+console.log(sumNumber([5]));
 
 function judgeArrayOrNot(inputValue: string|string[]): boolean {
   if(typeof inputValue === "string"){
