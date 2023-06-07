@@ -1,5 +1,5 @@
-let power: any;
+let num: number;
+let str: string;
 
-power = "123";
-power = 123;
-
+num = null;
+str = undefined;
