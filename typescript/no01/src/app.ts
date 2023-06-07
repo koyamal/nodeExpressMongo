@@ -1,13 +1,7 @@
-function formatCommandLine(command: string[]|string): void{
-  let line = "";
-  if (typeof command === "string"){
-    line = command.trim();
-  }else {
-    line = command.join(" ").trim();
-  }
+function extend<T, U>(first: T, second: U): T & U {
+  return { ...first, ...second};
+}
 
-  console.log(line);
-};
-
-formatCommandLine("pwd");
-formatCommandLine(["cd", "~"]);
+const x = extend({ a: "Hello" }, { b: 42 });
+console.log(x.a);
+console.log(x.b);
