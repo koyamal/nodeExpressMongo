@@ -1,13 +1,13 @@
-function sumNumber(numArray: number[]): number {
+function sumNumber(numArray: number[]): void {
   let sumValue: number = 0;
   numArray.forEach((val) => {
     sumValue += val;
   });
-  return sumValue;
+  console.log(sumValue);
 }
 
-console.log(sumNumber([1, 2, 3, 4, 5]));
-console.log(sumNumber([5]));
+sumNumber([1, 2, 3, 4, 5]);
+sumNumber([5]);
 
 function judgeArrayOrNot(inputValue: string|string[]): boolean {
   if(typeof inputValue === "string"){
