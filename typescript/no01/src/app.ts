@@ -1,18 +1,5 @@
-let name1: {
-  first: string;
-  second: string;
-};
+let power: any;
 
-name1 = {
-  first: "John",
-  second: "Doe"
-};
+power = "123";
+power = 123;
 
-name1 = {
-  first: "John"
-}
-
-name1 = {
-  first: "John",
-  second: 1234,
-}
