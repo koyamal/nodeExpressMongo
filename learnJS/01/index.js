@@ -7,6 +7,9 @@
 // fn(1);
 
 const fn2 = function(a, b = 1) {
+  console.log(arguments);
+  console.log(arguments[0]);
+  console.log(arguments[1]);
   console.log(a, b);
 }
 
