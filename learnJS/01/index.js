@@ -1,24 +1,8 @@
-window.name = "John";
-
-// const a = () => console.log("Bye " + this.name);
-
-const person = {
-  name: "Tom",
-  hello: function() {
-    console.log("Hello " + this.name);
-    const a = () => console.log("Bye " + this.name);
-    a();
-  },
-  hello_() {
-    console.log("Hello " + this.name);
-  }
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
 }
 
-// person.hello();
-
-function b() {
-  const a = () => console.log("Bye " + this.name);
-  a();
-}
-
-b();
+const bob = new Person("Bob", 18);
+const tom = new Person("Tom", 23);
+const sun = new Person("Sun", 16);
