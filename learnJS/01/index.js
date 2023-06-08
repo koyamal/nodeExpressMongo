@@ -11,3 +11,12 @@ b();
 a.apply(tim, ["Tommy"]);
 
 a.call(tim, "Tommy");
+
+const arry= [1, 2, 3, 4, 5];
+
+Math.max(1, 2);
+const result = Math.max.apply(null, arry);
+console.log(result);
+
+console.log(Math.max(...arry));
+console.log(...arry);
