@@ -1,15 +1,20 @@
-function a() {
-  console.log("Hello");
+function hello(name) {
+  console.log("hello", name);
 }
 
-a.prop = 0;
-a.method = function() {
-  console.log("method");
+function bye() {
+  console.log("bye");
 }
 
-a.method.prop = 100;
+function fn(cb) {
+  cb("Tom");
+}
 
-a();
-a.method();
-console.log(a.prop);
-console.log(a.method.prop);
+fn(hello);
+fn(bye);
+
+fn(function(name) {
+  console.log("Goobye", name);
+})
+
+setTimeout(() => {hello("Tom")}, 1000);
