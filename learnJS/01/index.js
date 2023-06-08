@@ -1,22 +1,22 @@
 function a(name) {
-  console.log('hello ' + this.name + ", " + name);
+  return "Hello " + name;
 }
 
-const tim = {name: "Tim"};
+const b = function(name) {
+  return "Hello " + name;
+}
 
-const b = a.bind(tim, "Tommy");
+const bb = name => "Hello " + name;
 
-b();
+console.log(bb("Tom"));
 
-a.apply(tim, ["Tommy"]);
 
-a.call(tim, "Tommy");
+const bbb = (name1, name2) => "Hello " + name1 + " " + name2;
 
-const arry= [1, 2, 3, 4, 5];
+console.log(bbb("Bob", "Tommy"));
 
-Math.max(1, 2);
-const result = Math.max.apply(null, arry);
-console.log(result);
+const bbbb = (name1, name2) => {
+  return "Hello " + name1 + " " + name2;
+}
 
-console.log(Math.max(...arry));
-console.log(...arry);
+console.log(bbbb("Bob", "Tommy"));
