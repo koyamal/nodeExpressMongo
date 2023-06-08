@@ -9,9 +9,24 @@ const person = {
 
 person.hello();
 
+const helloTom = person.hello.bind(person);
 
 function fn(ref) {
   ref();
 }
 
-fn(person.hello);
+fn(helloTom);
+
+function a() {
+  console.log('hello ' + this.name);
+}
+
+const b = a.bind({name: "Tim"});
+b();
+
+function aa(name) {
+  console.log("Hello " + name);
+}
+
+const bb = aa.bind(null, 'Tyom');
+bb();
