@@ -1,20 +1,12 @@
-function hello(name) {
-  console.log("hello", name);
+const person = {
+  name: "Tom",
+  hello: function() {
+    console.log("I'm " + this.name);
+  }
 }
 
-function bye() {
-  console.log("bye");
-}
+person.hello();
 
-function fn(cb) {
-  cb("Tom");
-}
+const hello = person.hello;
 
-fn(hello);
-fn(bye);
-
-fn(function(name) {
-  console.log("Goobye", name);
-})
-
-setTimeout(() => {hello("Tom")}, 1000);
+hello();
