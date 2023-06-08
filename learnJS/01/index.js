@@ -7,5 +7,14 @@ function F(a, b) {
 
 F.prototype.c = function() {}
 
-const instance = new F(1, 2);
+function newOpe(C, ...args) {
+  const _this = Object.create(C.prototype);
+  const result = C.apply(_this, args);
+  console.log(result, _this);
+
+  return _this;
+}
+
+// const instance = new F(1, 2);
+const instance = newOpe(F, 1, 2);
 console.log(instance);
