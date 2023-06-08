@@ -1,20 +1,11 @@
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
-  this.hello = function() {
-    console.log("Hello " + this.name);
-  }
+function F(a, b) {
+  this.a = a;
+  this.b = b;
+  // return {};
+  // return 1
 }
 
-Person.prototype.hello = function() {
-  console.log("Hello " + this.name);
-}
+F.prototype.c = function() {}
 
-const bob = new Person("Bob", 18);
-const tom = new Person("Tom", 23);
-const sun = new Person("Sun", 16);
-
-bob.hello();
-tom.hello();
-
-console.log(Person.prototype === bob.__proto__);
+const instance = new F(1, 2);
+console.log(instance);
