@@ -1,32 +1,13 @@
-window.name = "Jhon";
-
-const person = {
-  name: "Tom",
-  hello: function() {
-    console.log("Hello, " , this.name);
-  }
+function a(name) {
+  console.log('hello ' + this.name + ", " + name);
 }
 
-person.hello();
+const tim = {name: "Tim"};
 
-const helloTom = person.hello.bind(person);
+const b = a.bind(tim, "Tommy");
 
-function fn(ref) {
-  ref();
-}
-
-fn(helloTom);
-
-function a() {
-  console.log('hello ' + this.name);
-}
-
-const b = a.bind({name: "Tim"});
 b();
 
-function aa(name) {
-  console.log("Hello " + name);
-}
+a.apply(tim, ["Tommy"]);
 
-const bb = aa.bind(null, 'Tyom');
-bb();
+a.call(tim, "Tommy");
