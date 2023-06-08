@@ -1,19 +1,15 @@
-// console.log("Hello.");
-
-// function fn(a, b) {
-//   console.log(a, b);
-// }
-
-// fn(1);
-
-const fn2 = function(...args) {
-  console.log(args);
-  console.log(arguments);
-  console.log(arguments[0]);
-  console.log(arguments[1]);
-  // console.log(a, b);
+function a() {
+  console.log("Hello");
 }
 
-fn2(1, null);
-fn2(1);
-fn2(1, undefined);
+a.prop = 0;
+a.method = function() {
+  console.log("method");
+}
+
+a.method.prop = 100;
+
+a();
+a.method();
+console.log(a.prop);
+console.log(a.method.prop);
