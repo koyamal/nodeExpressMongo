@@ -19,3 +19,8 @@ bob.hello();
 
 const result = bob.hasOwnProperty("age");
 console.log(result);
+
+console.log("name" in bob);
+console.log("hello" in bob);
+console.log("bye" in bob);
+console.log("hasOwnProperty" in bob);
