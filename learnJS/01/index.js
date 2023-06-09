@@ -12,6 +12,10 @@ Object.defineProperty(Person1.prototype, 'name', {
   }
 });
 
+Person1.hello = function() {
+  console.log("Hello");
+}
+
 const p1 = new Person1("Bob", 22);
 console.log(p1.name);
 
@@ -32,4 +36,14 @@ class Person2 {
   set name(val) {
     this._name = val;
   }
+
+  static hello() {
+    console.log("Hello");
+  }
 }
+
+const p2 = new Person2("Bob", 33);
+
+Person2.hello();
+
+console.log(p2);
