@@ -1,25 +1,19 @@
-"use strict";
-const obj = { prop: 0 };
+function Person1(name, age) {
+  this._name = name;
+  this._age = age;
+}
 
-const descriptor = Object.getOwnPropertyDescriptor(obj, "prop");
-
-console.log(descriptor);
-
-
-const obj2 = {};
-
-Object.defineProperty(obj2, "prop", {
-  value: 0,
-  writable: true,
-  configurable: true,
+Object.defineProperty(Person1.prototype, 'name', {
+  get: function() {
+    return this._name;
+  },
+  set: function(val) {
+    this._name = val;
+  }
 });
 
-Object.defineProperty(obj2, "prop", {
-  enumerable: true,
-});
+const p1 = new Person1("Bob", 22);
+console.log(p1.name);
 
-obj2.prop = 2;
-
-const descriptor2 = Object.getOwnPropertyDescriptor(obj2, "prop");
-
-console.log(descriptor2);
+p1.name = "Tom";
+console.log(p1.name);
