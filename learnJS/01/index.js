@@ -1,28 +1,27 @@
-function F(a, b) {
-  this.a = a;
-  this.b = b;
-  // return {};
-  // return 1
+const fn1 = new Function('a', 'b', 'return a + b');
+
+function fn2(a, b) {
+  return a + b;
 }
 
-F.prototype.c = function() {}
 
-const instance = new F(1, 2);
+const result = fn1(1, 2);
+console.log(result);
 
-console.log(instance);
 
-console.log(instance instanceof F);
-console.log(instance instanceof Object);
-console.log(instance.__proto__ === F.prototype);
-console.log(instance.__proto__ === Object.prototype);
+console.log(fn1 instanceof Function);
+console.log(fn2 instanceof Function);
 
-function fn(arg) {
-  if(arg instanceof Array){
-    arg.push("value");
-  } else {
-    arg["key"] = "value";
-  }
-  console.log(arg);
+const obj = new function() {
+  this.a = 0;
 }
 
-fn([])
+console.log(obj);
+
+const fn3 = new Function("this.a = 0;");
+console.log(fn3);
+
+const obj3 = new fn3();
+console.log(obj3);
+
+console.log( obj3 instanceof fn3);
