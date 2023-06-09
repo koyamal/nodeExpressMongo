@@ -1,12 +1,22 @@
-const a = new String("Hello");
+const s = Symbol("hello");
+const s2 = Symbol("hello");
 
-console.log(a.toUpperCase());
+console.log(s);
+console.log(s2);
+console.log(s === s2);
 
-const b = new Number(100);
+console.log(typeof s);
 
-console.log(b.toExponential());
+const str = new String("Tom");
+console.log(str);
+
+String.prototype[s] = function() {
+  console.log("Hello s");
+}
+
+String.prototype[s2] = function() {
+  console.log("Hello s2");
+}
 
 
-const c = "Hello";
-console.log(c);
-console.log(c.toUpperCase());
+str[s2]();
