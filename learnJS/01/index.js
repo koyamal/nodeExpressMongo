@@ -1,34 +1,7 @@
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+const arry = new Array(1, 2, 3, 4);
 
-  hello() {
-    console.log("Person: Hello " + this.name);
-  }
+console.log(arry);
 
-  bye() {
-    console.log("Person: Bye " + this.name);
-  }
-}
+console.log(arry[0]);
+console.log(arry["0"]);
 
-class Japanese extends Person {
-  constructor(name, age, gender) {
-    super(name, age);
-    this.genderb= gender;
-  }
-
-  bye() {
-    super.bye();
-    console.log("Japanese: Sauyonara " + this.name);
-  }
-
-}
-
-const taro = new Japanese("taro", 23, "Male");
-
-console.log(taro);
-
-taro.hello();
-taro.bye();
