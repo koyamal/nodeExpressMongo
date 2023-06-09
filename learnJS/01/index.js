@@ -1,22 +1,25 @@
-const s = Symbol("hello");
-const s2 = Symbol("hello");
+"use strict";
+const obj = { prop: 0 };
 
-console.log(s);
-console.log(s2);
-console.log(s === s2);
+const descriptor = Object.getOwnPropertyDescriptor(obj, "prop");
 
-console.log(typeof s);
-
-const str = new String("Tom");
-console.log(str);
-
-String.prototype[s] = function() {
-  console.log("Hello s");
-}
-
-String.prototype[s2] = function() {
-  console.log("Hello s2");
-}
+console.log(descriptor);
 
 
-str[s2]();
+const obj2 = {};
+
+Object.defineProperty(obj2, "prop", {
+  value: 0,
+  writable: true,
+  configurable: true,
+});
+
+Object.defineProperty(obj2, "prop", {
+  enumerable: true,
+});
+
+obj2.prop = 2;
+
+const descriptor2 = Object.getOwnPropertyDescriptor(obj2, "prop");
+
+console.log(descriptor2);
