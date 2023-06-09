@@ -1,7 +1,12 @@
-const arry = new Array(1, 2, 3, 4);
+const a = new String("Hello");
 
-console.log(arry);
+console.log(a.toUpperCase());
 
-console.log(arry[0]);
-console.log(arry["0"]);
+const b = new Number(100);
 
+console.log(b.toExponential());
+
+
+const c = "Hello";
+console.log(c);
+console.log(c.toUpperCase());
