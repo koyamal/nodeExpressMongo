@@ -7,17 +7,27 @@ class Person {
   hello() {
     console.log("Person: Hello " + this.name);
   }
+
+  bye() {
+    console.log("Person: Bye " + this.name);
+  }
 }
 
-// function Person(name, age) {
-//   this.name = name;
-//   this.age = age;
-// }
+class Japanese extends Person {
+  constructor(name, age, gender) {
+    super(name, age);
+    this.genderb= gender;
+  }
 
-// Person.prototype.hello = function() {
-//   console.log("Person: Hello " + this.name);
-// }
+  bye() {
+    console.log("Japanese: Sauyonara " + this.name);
+  }
 
-const bob = new Person("Bob", 32);
-console.log(bob);
-bob.hello();
+}
+
+const taro = new Japanese("taro", 23, "Male");
+
+console.log(taro);
+
+taro.hello();
+taro.bye();
