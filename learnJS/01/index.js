@@ -20,6 +20,7 @@ class Japanese extends Person {
   }
 
   bye() {
+    super.bye();
     console.log("Japanese: Sauyonara " + this.name);
   }
 
