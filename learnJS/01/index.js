@@ -16,3 +16,6 @@ Object.prototype.hello = function() {
 
 const bob = new Person("Bob", 19);
 bob.hello();
+
+const result = bob.hasOwnProperty("age");
+console.log(result);
