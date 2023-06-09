@@ -15,3 +15,14 @@ console.log(instance instanceof F);
 console.log(instance instanceof Object);
 console.log(instance.__proto__ === F.prototype);
 console.log(instance.__proto__ === Object.prototype);
+
+function fn(arg) {
+  if(arg instanceof Array){
+    arg.push("value");
+  } else {
+    arg["key"] = "value";
+  }
+  console.log(arg);
+}
+
+fn([])
