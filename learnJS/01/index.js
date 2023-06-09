@@ -1,27 +1,18 @@
-const fn1 = new Function('a', 'b', 'return a + b');
-
-function fn2(a, b) {
-  return a + b;
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.hello = function() {
+    console.log("OwnProperty: Hello " + this.name);
+  }
 }
 
-
-const result = fn1(1, 2);
-console.log(result);
-
-
-console.log(fn1 instanceof Function);
-console.log(fn2 instanceof Function);
-
-const obj = new function() {
-  this.a = 0;
+Person.prototype.hello = function() {
+  console.log("Person: Hello " + this.name);
 }
 
-console.log(obj);
+Object.prototype.hello = function() {
+  console.log("Object: Hello " + this.name);
+}
 
-const fn3 = new Function("this.a = 0;");
-console.log(fn3);
-
-const obj3 = new fn3();
-console.log(obj3);
-
-console.log( obj3 instanceof fn3);
+const bob = new Person("Bob", 19);
+bob.hello();
