@@ -1,49 +1,34 @@
-function Person1(name, age) {
-  this._name = name;
-  this._age = age;
-}
-
-Object.defineProperty(Person1.prototype, 'name', {
-  get: function() {
-    return this._name;
-  },
-  set: function(val) {
-    this._name = val;
-  }
-});
-
-Person1.hello = function() {
-  console.log("Hello");
-}
-
-const p1 = new Person1("Bob", 22);
-console.log(p1.name);
-
-p1.name = "Tom";
-console.log(p1.name);
-
-
-class Person2 {
+class Person {
   constructor(name, age) {
-    this._name = name;
-    this._age = age;
+    this.name = name;
+    this.age = age;
   }
 
-  get name() {
-    return this._name;
+  hello(person) {
+    console.log(`${this.name} says hello ${person.name}`);
+    return this;
   }
 
-  set name(val) {
-    this._name = val;
+  introduce() {
+    console.log(`Hi, I'm ${this.name}, ${this.age} years old`);
+    return this;
   }
 
-  static hello() {
-    console.log("Hello");
+  shakeHands(person) {
+    console.log(`${this.name} shake hands with ${person.name}`);
+    return this;
+  }
+
+  bye(person) {
+    console.log(`Goodbye, ${person.name}`);
+    return this;
   }
 }
 
-const p2 = new Person2("Bob", 33);
+const bob = new Person("Bob", 23);
+const tim = new Person("Tim", 33);
 
-Person2.hello();
-
-console.log(p2);
+bob.hello(tim)
+  .introduce()
+  .shakeHands(tim)
+  .bye(tim);
