@@ -17,3 +17,19 @@ console.log(p1.name);
 
 p1.name = "Tom";
 console.log(p1.name);
+
+
+class Person2 {
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(val) {
+    this._name = val;
+  }
+}
