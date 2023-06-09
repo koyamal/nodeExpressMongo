@@ -1,26 +1,34 @@
 function Person(name, age) {
   this.name = name;
   this.age = age;
-  this.hello = function() {
-    console.log("OwnProperty: Hello " + this.name);
-  }
 }
 
 Person.prototype.hello = function() {
   console.log("Person: Hello " + this.name);
 }
 
-Object.prototype.hello = function() {
-  console.log("Object: Hello " + this.name);
+Person.prototype.bye = function() {
+  console.log("Person: Bye " + this.name);
 }
 
-const bob = new Person("Bob", 19);
-bob.hello();
+function Japanese(name, age) {
+  Person.call(this, name, age);
+}
 
-const result = bob.hasOwnProperty("age");
-console.log(result);
+Japanese.prototype = Object.create(Person.prototype);
 
-console.log("name" in bob);
-console.log("hello" in bob);
-console.log("bye" in bob);
-console.log("hasOwnProperty" in bob);
+Japanese.prototype.bye = function() {
+  console.log("Japanese: Sauyonara " + this.name);
+}
+
+Japanese.prototype.seeyou = function() {
+  console.log("Japanese: SeeYou " + this.name);
+}
+
+const taro = new Japanese("taro", 23);
+
+console.log(taro);
+
+taro.hello();
+taro.bye();
+taro.seeyou();
