@@ -1,34 +1,26 @@
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+const map = new Map();
 
-  hello(person) {
-    console.log(`${this.name} says hello ${person.name}`);
-    return this;
-  }
+const key1 = {};
 
-  introduce() {
-    console.log(`Hi, I'm ${this.name}, ${this.age} years old`);
-    return this;
-  }
+map.set(key1, "value1");
 
-  shakeHands(person) {
-    console.log(`${this.name} shake hands with ${person.name}`);
-    return this;
-  }
+console.log(map.get(key1));
 
-  bye(person) {
-    console.log(`Goodbye, ${person.name}`);
-    return this;
-  }
+const key2 = function() {};
+map.set(key2, "value2");
+
+console.log(map.get(key2));
+
+let key3;
+map.set(key3 = 0, 'value3');
+console.log(map.get(0));
+
+console.log(map);
+
+for(const m of map) {
+  console.log(m);
 }
 
-const bob = new Person("Bob", 23);
-const tim = new Person("Tim", 33);
-
-bob.hello(tim)
-  .introduce()
-  .shakeHands(tim)
-  .bye(tim);
+for(const [k, v] of map) {
+  console.log(k, v);
+}
