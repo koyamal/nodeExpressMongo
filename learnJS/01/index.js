@@ -24,3 +24,11 @@ for(const m of map) {
 for(const [k, v] of map) {
   console.log(k, v);
 }
+
+const s = new Set();
+s.add(key1);
+s.add(key1);
+
+for(let k of s) {
+  console.log(k);
+}
