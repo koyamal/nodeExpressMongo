@@ -1,16 +1,16 @@
 new Promise(function(resolve, reject) {
   console.log("Promise");
-  resolve("hello");
-  // reject();
+  // resolve("hello");
+  reject("bye");
 }).then(function(data){
   console.log("then 1", data);
-  // throw new Error();
+  // throw new Error(data);
   return data;
 }).then(function(data){
   console.log("then 2", data);
   return data;
-}).catch(function(){
-  console.log("catch");
+}).catch(function(data){
+  console.log("catch", data);
 }).finally(function(data){
   console.log("finally", data);
 });
