@@ -9,6 +9,8 @@ new Promise(function(resolve, reject) {
   console.log("then 2");
 }).catch(function(){
   console.log("catch");
+}).finally(function(){
+  console.log("finally");
 });
 
 console.log("Global end");
