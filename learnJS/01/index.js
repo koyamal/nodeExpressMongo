@@ -1,13 +1,8 @@
-function sleep(cb, val) {
-  setTimeout(function() {
-    console.log(val++);
-    cb(val);
-  }, 1000);
-}
+new Promise(function(resolve, reject) {
+  console.log("Promise");
+  resolve();
+}).then(function(){
+  console.log("then");
+});
 
-sleep(function(val) {
-  sleep(function(val) {
-    sleep(function(val) {
-    }, val);
-  }, val);
-}, 0);
+console.log("Global end");
