@@ -8,10 +8,11 @@ function sleep(val) {
   });
 }
 
-Promise.allSettled([sleep(2), sleep(3), sleep(4)]).then(function(data) {
+Promise.all([sleep(2), sleep(3), sleep(4)]).then(function(data) {
   console.log(data);
 }).catch(function(e) {
-  console.log(e);
+  console.log("Hello");
+  // console.log(e);
 });
 
 // sleep(0).then(function(val) {
