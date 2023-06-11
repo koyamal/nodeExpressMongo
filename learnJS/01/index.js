@@ -1,15 +1,13 @@
-function a(b) {
-  setTimeout(function task1(){
-    console.log("task1 done");
-    b();
-  });
-
-  console.log("fn a done");
+function sleep(cb, val) {
+  setTimeout(function() {
+    console.log(val++);
+    cb(val);
+  }, 1000);
 }
 
-function b() {
-  console.log("fn b done");
-}
-
-a(b);
-// b();
+sleep(function(val) {
+  sleep(function(val) {
+    sleep(function(val) {
+    }, val);
+  }, val);
+}, 0);
