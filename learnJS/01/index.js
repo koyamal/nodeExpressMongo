@@ -1,16 +1,18 @@
 new Promise(function(resolve, reject) {
   console.log("Promise");
-  resolve();
+  resolve("hello");
   // reject();
-}).then(function(){
-  console.log("then 1");
-  throw new Error();
-}).then(function(){
-  console.log("then 2");
+}).then(function(data){
+  console.log("then 1", data);
+  // throw new Error();
+  return data;
+}).then(function(data){
+  console.log("then 2", data);
+  return data;
 }).catch(function(){
   console.log("catch");
-}).finally(function(){
-  console.log("finally");
+}).finally(function(data){
+  console.log("finally", data);
 });
 
 console.log("Global end");
