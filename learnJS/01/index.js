@@ -10,4 +10,8 @@ btn.addEventListener('click', function(){
 })
 
 
-sleep(3000);
+// sleep(3000);
+
+setTimeout(function() {
+  sleep(3000);
+}, 2000);
