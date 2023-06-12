@@ -6,6 +6,8 @@ async function useFetch() {
       throw new Error("no data found");
     }
     return users;
+  } else {
+    throw new Error("Load data failed");
   }
 }
 
