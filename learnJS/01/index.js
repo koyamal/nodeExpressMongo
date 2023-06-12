@@ -14,6 +14,7 @@ async function useFetch() {
 async function init() {
   try {
     const users = await useFetch();
+    console.log(users);
     users.forEach((user) => {
       console.log(`I'm ${user.name}, ${user.age} year's old.`);
     });
