@@ -12,8 +12,8 @@ async function init() {
   val = await sleep(val);
   val = await sleep(val);
   val = await sleep(val);
-  val = await sleep(val);
-  val = await sleep(val);
 }
 
-init();
+init().then(function() {
+  console.log("init() done");
+});
