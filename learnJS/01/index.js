@@ -6,6 +6,6 @@ fetch("./users.json").then(function(response) {
 }).then(function(json){
   console.log(json);
   json.forEach(data => {
-    console.log(data);
+    console.log(`I'm ${data.name}, ${data.age} year's old.`);
   });
 });
