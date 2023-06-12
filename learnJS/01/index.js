@@ -1,3 +1,5 @@
+console.log("global start");
+
 new Promise(function promise(resolve) {
   console.log("promise");
 
