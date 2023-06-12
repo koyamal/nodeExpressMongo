@@ -1,15 +1,12 @@
-function sleep(val) {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      console.log(val++);
-      // resolve(val);
-      reject(val);
-    }, val * 500);
-  });
-}
-
-Promise.allSettled([sleep(2), sleep(3), sleep(4)]).then(function(data) {
-  console.log(data);
-}).catch(function(e) {
-  console.log("Hello");
+setTimeout(function task1() {
+  console.log("task1");
 });
+
+new Promise(function promise(resolve) {
+  console.log("promise");
+  resolve();
+}).then(function job1() {
+  console.log("job1");
+});
+
+console.log("global end");
