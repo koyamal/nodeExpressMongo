@@ -1,9 +1,8 @@
-async function useFetch() {
-  const response = await fetch("./users.json");
-  const users = await response.json();
-  users.forEach((user) =>{
-    console.log(`I'm ${user.name}, ${user.age} year's old.`);
-  });
+try {
+  console.log("hello");
+  throw new Error();
+} catch(e) {
+  console.error(e);
+} finally {
+  console.log("bye");
 }
-
-useFetch();
