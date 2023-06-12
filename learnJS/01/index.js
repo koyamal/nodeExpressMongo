@@ -1,24 +1,23 @@
 async function useFetch() {
   const response = await fetch("./users.json");
-  const users = await response.json();
-
-  return users;
+  if(response.ok) {
+    const users = await response.json();
+    if(!users.length) {
+      throw new Error("no data found");
+    }
+    return users;
+  }
 }
 
 async function init() {
-  const users = await useFetch();
-  users.forEach((user) => {
-    console.log(`I'm ${user.name}, ${user.age} year's old.`);
-  });
+  try {
+    const users = await useFetch();
+    users.forEach((user) => {
+      console.log(`I'm ${user.name}, ${user.age} year's old.`);
+    });
+  } catch(e) {
+    console.error(e);
+  }
 }
 
 init();
-
-try {
-  console.log("hello");
-  throw new Error();
-} catch(e) {
-  console.error(e);
-} finally {
-  console.log("bye");
-}
