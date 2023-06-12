@@ -18,6 +18,11 @@ new Promise(function promise(resolve) {
   console.log("job1");
   setTimeout(function task2(){
     console.log("task2");
+
+    const p = Promise.resolve();
+    p.then(function job7() {
+      console.log("job7");
+    });
     queueMicrotask(function job5() {
       console.log("job5");
     });
