@@ -19,7 +19,7 @@ async function init() {
       console.log(`I'm ${user.name}, ${user.age} year's old.`);
     });
   } catch(e) {
-    console.error(e);
+    console.error(e.message);
   } finally {
     console.log("bye");
   }
