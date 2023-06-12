@@ -1,3 +1,4 @@
+console.log("global start");
 setTimeout(function task1() {
   console.log("task1");
 });
