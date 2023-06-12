@@ -17,6 +17,8 @@ async function init() {
     });
   } catch(e) {
     console.error(e);
+  } finally {
+    console.log("bye");
   }
 }
 
