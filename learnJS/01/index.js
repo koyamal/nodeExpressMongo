@@ -12,11 +12,13 @@ async function init() {
   val = await sleep(val);
   val = await sleep(val);
   val = await sleep(val);
-
+  throw new Error();
   return val;
 }
 
 init().then(function(val) {
   console.log("init() done");
   console.log("val: ", val);
+}).catch(function(e) {
+  console.log(e);
 });
