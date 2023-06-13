@@ -1,21 +1,22 @@
-function calcFactory(val, callback) {
-  return {
-    plus: function(target) {
-      const newVal = val + target;
-      // setTimeout(() => {
-      //   callback(`${val} + ${target} = ${newVal}`);
-      // }, 1000);
-      setTimeout(callback.bind(null, `${val} + ${target} = ${newVal}`), 1000);
-      val = newVal;
-    },
-    minus: function(target) {
-      const newVal = val - target;
-      callback(`${val} - ${target} = ${newVal}`);
-      val = newVal;
-    },
+const addNumberFactory = num => value =>  num + value;
+
+const add5 = addNumberFactory(5);
+const result = add5(10);
+console.log(result);
+
+
+const incrementFactory = () => {
+  let num = 0;
+
+  const a = () => {
+    num = num + 1;
+    console.log(num);
   }
+
+  return a;
 }
 
-const calc = calcFactory(10, console.log);
-calc.plus(1);
-calc.plus(1);
+const increment = incrementFactory();
+
+increment();
+increment();
