@@ -1,7 +1,21 @@
-function hello(name) {
-  return function() {
-    console.log("Hello " + name);
+function calcFactory(val, callback) {
+  return {
+    plus: function(target) {
+      const newVal = val + target;
+      // setTimeout(() => {
+      //   callback(`${val} + ${target} = ${newVal}`);
+      // }, 1000);
+      setTimeout(callback.bind(null, `${val} + ${target} = ${newVal}`), 1000);
+      val = newVal;
+    },
+    minus: function(target) {
+      const newVal = val - target;
+      callback(`${val} - ${target} = ${newVal}`);
+      val = newVal;
+    },
   }
 }
 
-setTimeout(hello("Tom"), 1000);
+const calc = calcFactory(10, console.log);
+calc.plus(1);
+calc.plus(1);
