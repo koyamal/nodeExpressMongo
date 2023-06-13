@@ -1,7 +1,6 @@
 class User {
   constructor(name) {
     this.name = name;
-    this.isAdmin = false;
     this.path = "/";
   }
 
@@ -11,18 +10,12 @@ class User {
   }
 
   checkRoll() {
-    let role = "normal";
-    if(this.isAdmin) {
-      role = "admin";
-    }
-    console.log(`you have ${role} roll`);
-
+    console.log(`you have normal roll`);
     return true;
   }
 
   redirect() {
     console.log(`redirect: ${this.path}`);
-
     return true;
   }
 }
@@ -32,6 +25,11 @@ class AdminUser extends User {
     super(name);
     this.isAdmin = true;
     this.path = "/admin";
+  }
+
+  checkRoll() {
+    console.log(`you have admin roll`);
+    return true;
   }
 }
 
