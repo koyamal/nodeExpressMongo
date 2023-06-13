@@ -1,9 +1,11 @@
-let a = "hello";
+let c = {
+  prop: "Hello",
+}
 
-let b = a;
+let d = c;
 
-console.log(a,b);
+console.log(c,d);
 
-b = "bye";
+d.prop = "bye";
 
-console.log(a,b);
+console.log(c,d);
