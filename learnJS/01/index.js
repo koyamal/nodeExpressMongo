@@ -1,52 +1,15 @@
-class User {
-  constructor(name) {
+class Person {
+  constructor(name, age) {
     this.name = name;
-    this.path = "/";
+    this.age = age;
   }
 
-  login() {
-    console.log(`User: ${this.name}`);
-    return true;
-  }
-
-  checkRoll() {
-    console.log(`you have normal roll`);
-    return true;
-  }
-
-  redirect() {
-    console.log(`redirect: ${this.path}`);
-    return true;
+  hello() {
+    console.log("Hello " + this.name);
   }
 }
 
-class AdminUser extends User {
-  constructor(name) {
-    super(name);
-    this.isAdmin = true;
-    this.path = "/admin";
-  }
+const bob = new Person("Bob", 23);
 
-  checkRoll() {
-    console.log(`you have admin roll`);
-    return true;
-  }
-}
-
-
-function logincontroller(user) {
-  if(user.login() && user.checkRoll() && user.redirect()) {
-    console.log("login success");
-  } else {
-    console.log("login failed");
-  }
-}
-
-const tom = new User("Tom");
-const bob = new AdminUser("Bob");
-
-console.log(tom);
-console.log(bob);
-
-
-logincontroller(bob);
+setTimeout(bob.hello.bind(bob), 1000);
+setTimeout(() => {bob.hello()}, 1000);
