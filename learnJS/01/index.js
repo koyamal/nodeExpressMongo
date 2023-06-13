@@ -1,3 +1,9 @@
-const a = "hello";
+const b = {
+  prop: "hello",
+}
 
-a = "bye";
+b = {
+
+}
+
+b.prop = "bye";
