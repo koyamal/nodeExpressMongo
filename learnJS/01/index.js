@@ -9,3 +9,9 @@ console.log(c,d);
 d.prop = "bye";
 
 console.log(c,d);
+
+d = {
+  prop: "Hello",
+}
+
+console.log(c,d);
