@@ -1,6 +1,6 @@
 function genIncrement(val) {
   return function() {
-    console.log(val++);
+    console.log(++val);
   }
 }
 
