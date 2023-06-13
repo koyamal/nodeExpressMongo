@@ -7,3 +7,5 @@ const b = {
 }
 
 console.log(a === b);
+
+console.log(a.prop === b.prop);
