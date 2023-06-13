@@ -19,3 +19,10 @@ function fn2(arg2) {
 }
 
 fn2(b);
+
+function fn3(arg3) {
+  arg3 = {};
+  console.log(b, arg3);
+}
+
+fn3(b);
