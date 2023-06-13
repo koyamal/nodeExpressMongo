@@ -1,22 +1,54 @@
-const addNumberFactory = num => value =>  num + value;
-
-const add5 = addNumberFactory(5);
-const result = add5(10);
-console.log(result);
-
-
-const incrementFactory = () => {
-  let num = 0;
-
-  const a = () => {
-    num = num + 1;
-    console.log(num);
+class User {
+  constructor(name) {
+    this.name = name;
+    this.isAdmin = false;
+    this.path = "/";
   }
 
-  return a;
+  login() {
+    console.log(`User: ${this.name}`);
+    return true;
+  }
+
+  checkRoll() {
+    let role = "normal";
+    if(this.isAdmin) {
+      role = "admin";
+    }
+    console.log(`you have ${role} roll`);
+
+    return true;
+  }
+
+  redirect() {
+    console.log(`redirect: ${this.path}`);
+
+    return true;
+  }
 }
 
-const increment = incrementFactory();
+class AdminUser extends User {
+  constructor(name) {
+    super(name);
+    this.isAdmin = true;
+    this.path = "/admin";
+  }
+}
 
-increment();
-increment();
+
+function logincontroller(user) {
+  if(user.login() && user.checkRoll() && user.redirect()) {
+    console.log("login success");
+  } else {
+    console.log("login failed");
+  }
+}
+
+const tom = new User("Tom");
+const bob = new AdminUser("Bob");
+
+console.log(tom);
+console.log(bob);
+
+
+logincontroller(bob);
