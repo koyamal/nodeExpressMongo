@@ -1,17 +1,3 @@
-let c = {
-  prop: "Hello",
-}
+const a = "hello";
 
-let d = c;
-
-console.log(c,d);
-
-d.prop = "bye";
-
-console.log(c,d);
-
-d = {
-  prop: "Hello",
-}
-
-console.log(c,d);
+a = "bye";
