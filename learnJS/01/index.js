@@ -2,31 +2,16 @@ class Calculator{
   constructor() {
     this.ans = 0;
     this.flag = null;
-    this.calcformula = () => {}
+    this.calcformula = null;
   }
   set(val) {
-    if(!this.flag)
+    if(!this.calcformula)
     {
       this.ans = val;
       return this;
     }
-    if(this.flag === "plus") {
-      this.calcformula(val);
-      // this.ans += val;
-      // console.log(this.ans);
-    } else if (this.flag === "minus") {
-      this.calcformula(val);
-      // this.ans -= val;
-      // console.log(this.ans);
-    } else if (this.flag === "mutiply") {
-      this.calcformula(val);
-      // this.ans *= val;
-      // console.log(this.ans);
-    } else if (this.flag === "divide") {
-      this.calcformula(val);
-      // this.ans /= val;
-      // console.log(this.ans);
-    }
+
+    this.calcformula(val);
     return this;
   }
   plus() {
