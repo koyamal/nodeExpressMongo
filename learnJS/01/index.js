@@ -15,6 +15,7 @@ async function init() {
   val = await sleep(val);
   // console.log(val);
   // throw new Error("New Error");
+  console.log(sleep(10));
   return val;
 }
 
@@ -25,7 +26,7 @@ async function init() {
 // });
 
 async function init2() {
-  const val = await init();
+  const val =  init();
   console.log("init2: ", val);
 }
 
