@@ -1,7 +1,9 @@
-console.log(fetch("users.json"));
+const a = new Promise(function(resolve, reject){
+  console.log("Hello");
+  // resolve();
+  reject("e");
+}).catch(e => {console.log("bye")});
 
-const a = fetch("users.json").then((data) => {
-  console.log(data);
-});
-
-console.log(a);
+a.then(() => { console.log("Then")});
+// a.catch((e) => { console.log("Catch", e)});
+// console.log(a);
