@@ -14,9 +14,12 @@ async function init() {
   val = await sleep(val);
   val = await sleep(val);
   // console.log(val);
+  return val;
 }
 
-init();
+init().then(function(val) {
+  console.log("hello", val);
+});
 
 
 
