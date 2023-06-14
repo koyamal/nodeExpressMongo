@@ -1,47 +1,8 @@
-class Calculator{
-  constructor() {
-    this.ans = 0;
-    this.calcformula = null;
-  }
-  set(val) {
-    if(!this.calcformula)
-    {
-      this.ans = val;
-      return this;
-    }
-
-    this.calcformula(val);
-    return this;
-  }
-  plus() {
-    this.calcformula = (val) => {
-      this.ans += val;
-      console.log(this.ans);
-    }
-    return this;
-  }
-  minus() {
-    this.calcformula = (val) => {
-      this.ans -= val;
-      console.log(this.ans);
-    }
-    return this;
-  }
-  mutiply() {
-    this.calcformula = (val) => {
-      this.ans *= val;
-      console.log(this.ans);
-    }
-    return this;
-  }
-  divide() {
-    this.calcformula = (val) => {
-      this.ans /= val;
-      console.log(this.ans);
-    }
-    return this;
-  }
+async function myFetch(fileName) {
+	const response = await fetch(`./json/${fileName}`);
+	const json = await response.json();
+  console.log(json);
+	return json;
 }
 
-const calc = new Calculator();
-calc.set(10).plus().set(3).minus().set(14).mutiply().set(15).divide().set(5).plus().set(100);
+myFetch("user1.json");
