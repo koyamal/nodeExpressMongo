@@ -14,11 +14,14 @@ async function init() {
   val = await sleep(val);
   val = await sleep(val);
   // console.log(val);
+  throw new Error("New Error");
   return val;
 }
 
 init().then(function(val) {
   console.log("hello", val);
+}).catch(function(e) {
+  console.log(e);
 });
 
 
