@@ -1,20 +1,22 @@
-new Promise(function(resolve, reject) {
-  console.log("Promise");
-  setTimeout(function() {
-    resolve("hello");
-    // reject("hello");
-  }, 1000);
-}).then(function(data) {
-  console.log("then", data);
-  return data;
-  // throw new Error();
-}).then(function(data) {
-  console.log("then", data);
-  return data;
-}).catch(function(data) {
-  console.log("catch", data);
-}).finally(function(data) {
-  console.log("finally", data);
-});
+function sleep(val) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      console.log(val++);
+      resolve(val);
+    }, 1000);
+  });
+}
 
-console.log("global end");
+sleep(0).then(function(val) {
+  return sleep(val);
+}).then(function(val) {
+  return sleep(val);
+}).then(function(val) {
+  sleep(val);
+  return val;
+}).then(function(val) {
+  sleep(val);
+  return sleep(val);
+}).then(function(val) {
+  return sleep(val);
+});
