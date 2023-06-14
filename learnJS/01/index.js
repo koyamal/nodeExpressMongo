@@ -10,17 +10,11 @@ async function getUserInfo(id) {
 }
 
 async function getFriendsList(id) {
-  const response = await fetch(`./json/friendsOf${id}.json`);
-  const json = await response.json();
-
-  return json;
+  return await fetchFile(`./json/friendsOf${id}.json`);
 }
 
 async function getMessage(id) {
-  const response = await fetch(`./json/message${id}.json`);
-  const json = await response.json();
-
-  return json;
+  return await fetchFile(`./json/message${id}.json`);
 }
 
 async function myFetch(id) {
