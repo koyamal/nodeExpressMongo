@@ -1,8 +1,12 @@
-async function getUserInfo(id) {
-  const response = await fetch(`./json/user${id}.json`);
+async function fetchFile(fileName) {
+  const response = await fetch(fileName);
 	const json = await response.json();
 
   return json;
+}
+
+async function getUserInfo(id) {
+  return await fetchFile(`./json/user${id}.json`);
 }
 
 async function getFriendsList(id) {
