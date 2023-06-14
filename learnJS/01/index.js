@@ -1,7 +1,7 @@
 new Promise(function(resolve, reject) {
   console.log("Promise");
-  resolve("hello");
-  // reject();
+  // resolve("hello");
+  reject("hello");
 }).then(function(data) {
   console.log("then", data);
   return data;
@@ -10,7 +10,7 @@ new Promise(function(resolve, reject) {
   console.log("then", data);
   return data;
 }).catch(function(data) {
-  console.log("catch");
+  console.log("catch", data);
 }).finally(function(data) {
   console.log("finally", data);
 });
