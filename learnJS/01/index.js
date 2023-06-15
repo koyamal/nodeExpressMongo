@@ -8,11 +8,12 @@ async function fetchFile(filePath) {
 async function execute() {
   const data = await fetchFile("users.json");
   console.log(data);
+  console.log("Hello");
 };
 
 const a = execute();
 
 a.then((data) => {
-  console.log("Hello", data);
+  console.log("World", data);
 })
 console.log(a);
