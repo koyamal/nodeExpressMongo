@@ -4,8 +4,9 @@ console.log(a);
 
 
 async function fn() {
-  const a = await fetch("./users.json");
-  console.log(a.json());
+  const res = await fetch("./users.json");
+  const json = await res.json();
+  console.log(json);
 }
 
 fn();
