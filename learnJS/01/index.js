@@ -20,12 +20,9 @@ a.then((data) => {
 })
 console.log(a);
 
-execute("./json/friendsOf1.json").then(data => {
-  data.friendIds.forEach(id => {
+execute("./json/friendsOf1.json").then(({friendIds}) => {
+  friendIds.forEach(id => {
     console.log(id);
   })
-  // data.forEach(dat => {
-  //   console.log(dat);
-  // });
-  console.log(data);
+  console.log(friendIds);
 });
