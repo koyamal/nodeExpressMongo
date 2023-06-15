@@ -5,5 +5,9 @@ async function fetchFile(filePath) {
   return data;
 };
 
-const data = fetchFile("users.json");
-console.log(data);
+async function execute() {
+  const data = await fetchFile("users.json");
+  console.log(data);
+};
+
+execute();
