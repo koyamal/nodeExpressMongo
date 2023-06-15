@@ -10,4 +10,9 @@ async function execute() {
   console.log(data);
 };
 
-execute();
+const a = execute();
+
+a.then((data) => {
+  console.log("Hello", data);
+})
+console.log(a);
