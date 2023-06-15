@@ -1,12 +1,9 @@
-const a = fetch("./users.json");
-
-console.log(a);
-
-
-async function fn() {
-  const res = await fetch("./users.json");
-  const json = await res.json();
+fetch('users.json').then(function(response) {
+  console.log(response);
+  return response.json();
+}).then(function(json) {
   console.log(json);
-}
-
-fn();
+  return json[0];
+}).then(function(json) {
+  console.log(json);
+});
