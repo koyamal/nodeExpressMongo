@@ -11,3 +11,13 @@ fetch('users.json').then(function(response) {
 }).then(function(json) {
   console.log(json);
 });
+
+async function fetchUsers() {
+  const res = await fetch("users.json");
+  const users = await res.json();
+
+  console.log(users);
+  users.forEach(user => {
+    console.log(`${data.name}, ${data.age}`);
+  });
+}
