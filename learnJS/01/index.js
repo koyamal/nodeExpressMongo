@@ -5,15 +5,16 @@ async function fetchFile(filePath) {
   return data;
 };
 
-async function execute() {
-  const data = await fetchFile("users.json");
+async function execute(filePath) {
+  const data = await fetchFile(filePath);
   console.log(data);
   console.log("Hello");
 };
 
-const a = execute();
+const a = execute("users.json");
 
 a.then((data) => {
   console.log("World", data);
 })
 console.log(a);
+
