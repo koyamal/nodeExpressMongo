@@ -5,7 +5,7 @@ class Person {
     this.countory = countory;
   }
 
-  sayHello() {
+  sayHello = function() {
     console.log(`I'm ${this.name}, from ${this.countory}. Hello`);
   }
 
@@ -27,5 +27,9 @@ const bob = new Person("bob", 43, "USA");
 bob.sayHello();
 bob.sayBye();
 
+console.log(bob);
+
 const taro = new Japanese("taro", 12, "Japanese");
 taro.sayBye();
+
+console.log(taro);
