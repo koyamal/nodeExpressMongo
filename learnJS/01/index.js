@@ -5,7 +5,10 @@ class Person {
     this.countory = countory;
   }
 
-  sayHello = function() {
+  hello = function() {
+    console.log("hello, ", this.name);
+  }
+  sayHello() {
     console.log(`I'm ${this.name}, from ${this.countory}. Hello`);
   }
 
