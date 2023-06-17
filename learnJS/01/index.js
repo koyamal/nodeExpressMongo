@@ -13,6 +13,10 @@ function Japanese(name, age) {
 
 Japanese.prototype = Object.create(Person.prototype);
 
+Japanese.prototype.hello = function() {
+  console.log("こんにちは " + this.name);
+}
+
 const taro = new Japanese("taro", 32);
 
 console.log(taro);
