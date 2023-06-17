@@ -7,8 +7,9 @@ Person.prototype.hello = function() {
   console.log("Hello " + this.name);
 }
 
-function Japanese(name, age) {
+function Japanese(name, age, gender) {
   Person.call(this, name, age);
+  this.gender = gender;
 }
 
 Japanese.prototype = Object.create(Person.prototype);
@@ -17,7 +18,11 @@ Japanese.prototype.hello = function() {
   console.log("こんにちは " + this.name);
 }
 
-const taro = new Japanese("taro", 32);
+Japanese.prototype.bye = function() {
+  console.log("さようなら " + this.name);
+}
+
+const taro = new Japanese("taro", 32, "male");
 
 console.log(taro);
 taro.hello();
