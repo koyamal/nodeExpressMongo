@@ -7,6 +7,10 @@ Person.prototype.hello = function() {
   console.log("Hello " + this.name);
 }
 
+Person.prototype.sayAge = function() {
+  console.log(this.age);
+}
+
 function Japanese(name, age, gender) {
   Person.call(this, name, age);
   this.gender = gender;
@@ -26,3 +30,4 @@ const taro = new Japanese("taro", 32, "male");
 
 console.log(taro);
 taro.hello();
+taro.sayAge();
