@@ -7,13 +7,13 @@ Person.prototype.hello = function() {
   console.log("Hello " + this.name);
 }
 
-const bob = new Person("bob", 23);
-const tom = new Person("tom", 24);
-const sun = new Person("sun", 25);
+function Japanese(name, age) {
+  Person.call(this, name, age);
+}
 
-console.log(bob);
-bob.hello();
+Japanese.prototype = Object.create(Person.prototype);
 
+const taro = new Japanese("taro", 32);
 
-console.log(Person.prototype.hello === bob.hello);
-console.log(Person.prototype === bob.__proto__);
+console.log(taro);
+taro.hello();
