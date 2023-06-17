@@ -27,6 +27,10 @@ class Japanese extends Person {
   hello() {
     console.log(`こんにちは、私は${this.name}です。`);
   }
+
+  dispCountry() {
+    console.log(`Countory: ${this.country}`);
+  }
 }
 
 const addNum = numGenerator();
@@ -39,3 +43,4 @@ console.log(tom);
 console.log(taro);
 bob.hello();
 taro.hello();
+taro.dispCountry();
