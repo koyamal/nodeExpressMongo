@@ -1,33 +1,13 @@
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  hello() {
+    console.log(`Hello. I'm ${this.name}`);
+  }
 }
 
-Person.prototype.hello = function() {
-  console.log("Hello " + this.name);
-}
-
-Person.prototype.sayAge = function() {
-  console.log(this.age);
-}
-
-function Japanese(name, age, gender) {
-  Person.call(this, name, age);
-  this.gender = gender;
-}
-
-Japanese.prototype = Object.create(Person.prototype);
-
-Japanese.prototype.hello = function() {
-  console.log("こんにちは " + this.name);
-}
-
-Japanese.prototype.bye = function() {
-  console.log("さようなら " + this.name);
-}
-
-const taro = new Japanese("taro", 32, "male");
-
-console.log(taro);
-taro.hello();
-taro.sayAge();
+const bob = new Person("bob", 23);
+bob.hello();
