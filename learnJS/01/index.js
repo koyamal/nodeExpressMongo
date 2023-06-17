@@ -1,9 +1,6 @@
 function Person(name, age) {
   this.name = name;
   this.age = age;
-  this.hello = function() {
-    console.log("hello " + this.name);
-  }
 }
 
 Person.prototype.hello = function() {
