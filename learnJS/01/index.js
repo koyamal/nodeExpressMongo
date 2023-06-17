@@ -13,3 +13,7 @@ const sun = new Person("sun", 25);
 
 console.log(bob);
 bob.hello();
+
+
+console.log(Person.prototype.hello === bob.hello);
+console.log(Person.prototype === bob.__proto__);
