@@ -52,3 +52,7 @@ if(hanako.girl) {
 
 const sabu = new JapaneseBoy("saburo", 23);
 console.log(sabu);
+
+if(sabu instanceof JapaneseBoy) {
+  console.log(`${sabu.name} is Japanese boy`);
+}
