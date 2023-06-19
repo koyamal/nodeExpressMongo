@@ -15,3 +15,4 @@ const bob = new Person("bob", 12);
 console.log(bob);
 
 bob.hello();
+bob.bye();
