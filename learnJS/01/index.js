@@ -25,6 +25,13 @@ function JapaneseGirl(name, age) {
 
 JapaneseGirl.prototype = Object.create(Japanese.prototype);
 
+function JapaneseBoy(name, age) {
+  Japanese.call(this, name, age);
+  this.boy = true;
+}
+
+JapaneseBoy.prototype = Object.create(Japanese.prototype);
+
 const bob = new Person("bob", 12);
 console.log(bob);
 
