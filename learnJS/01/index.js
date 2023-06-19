@@ -11,6 +11,12 @@ Person.prototype.bye = function() {
   console.log("bye");
 }
 
+function Japanese(name, age) {
+  Person.call(this, name, age);
+}
+
+Japanese.prototype = Object.create(Person.prototype);
+
 const bob = new Person("bob", 12);
 console.log(bob);
 
