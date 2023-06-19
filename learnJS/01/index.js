@@ -23,3 +23,6 @@ console.log(bob);
 
 bob.hello();
 bob.bye();
+
+const taro = new Japanese("taro", 43);
+console.log(taro);
