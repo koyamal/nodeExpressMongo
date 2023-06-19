@@ -13,6 +13,7 @@ Person.prototype.bye = function() {
 
 function Japanese(name, age) {
   Person.call(this, name, age);
+  this.lang = "Japanese";
 }
 
 Japanese.prototype = Object.create(Person.prototype);
