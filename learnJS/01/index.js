@@ -49,3 +49,6 @@ if(hanako.girl) {
 } else {
   console.log(`${hanako.name} is not girl`);
 }
+
+const sabu = new JapaneseBoy("saburo", 23);
+console.log(sabu);
