@@ -36,3 +36,9 @@ console.log(taro);
 
 const hanako = new JapaneseGirl("hanako", 12);
 console.log(hanako);
+
+if(hanako.girl) {
+  console.log(`${hanako.name} is girl`);
+} else {
+  console.log(`${hanako.name} is not girl`);
+}
