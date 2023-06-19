@@ -33,3 +33,6 @@ bob.bye();
 
 const taro = new Japanese("taro", 43);
 console.log(taro);
+
+const hanako = new JapaneseGirl("hanako", 12);
+console.log(hanako);
