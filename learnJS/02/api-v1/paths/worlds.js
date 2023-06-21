@@ -1,9 +1,10 @@
 export default function(worldsService) {
   let operations = {
-    GET
+    GET: GET,
   };
 
   function GET(req, res, next) {
+    console.log("GET");
     res.status(200).json(worldsService.getWorlds(req.query.worldName));
   }
 
