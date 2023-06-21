@@ -1,14 +1,14 @@
 export default function(worldsService) {
   let operations = {
-    GET: GET,
+    GET: GETs,
   };
 
-  function GET(req, res, next) {
+  function GETs(req, res, next) {
     console.log("GET");
     res.status(200).json(worldsService.getWorlds(req.query.worldName));
   }
 
-  GET.apiDoc = {
+  GETs.apiDoc = {
     summary: 'Returns worlds by name.',
     operationId: 'getWorlds',
     parameters: [
