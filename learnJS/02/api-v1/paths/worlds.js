@@ -7,7 +7,6 @@ export default function(worldsService) {
     res.status(200).json(worldsService.getWorlds(req.query.worldName));
   }
 
-  // NOTE: We could also use a YAML string here.
   GET.apiDoc = {
     summary: 'Returns worlds by name.',
     operationId: 'getWorlds',
