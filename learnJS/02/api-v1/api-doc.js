@@ -2,7 +2,7 @@ const apiDoc = {
   swagger: '2.0',
   basePath: '/v1',
   info: {
-    title: 'A getting started API.',
+    title: 'A getting started API. in apiDoc',
     version: '1.0.0'
   },
   definitions: {
