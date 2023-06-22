@@ -16,6 +16,10 @@ initialize({
 app.get("/test", (req, res) => {
   console.log("hello");
   res.send("Hello");
+});
+
+app.post("/text", (req, res) => {
+  res.send("this is world.");
 })
 
 app.listen(3000);
