@@ -1,11 +1,13 @@
 let worlds = {
   Earth: {
     name: 'Earth',
-    size: 8
+    size: 8,
+    radius: 100,
   },
   Mercury: {
     name: 'Mercury',
-    size: 12
+    size: 12,
+    radius: 230,
   },
   name: "This is worldsService.js"
 };
