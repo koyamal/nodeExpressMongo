@@ -20,6 +20,10 @@ app.get("/test", (req, res) => {
 
 app.post("/text", (req, res) => {
   res.send("this is world.");
-})
+});
+
+app.pull("/text", (req, res) => {
+  res.send("this is pull");
+});
 
 app.listen(3000);
