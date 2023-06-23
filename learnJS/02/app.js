@@ -38,4 +38,8 @@ app.put("/users", (req, res) => {
   res.send("This is users page: put");
 });
 
+app.pull("/users", (req, res) => {
+  res.send("This is users page: pull");
+});
+
 app.listen(3000);
