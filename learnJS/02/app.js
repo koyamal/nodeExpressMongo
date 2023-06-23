@@ -30,4 +30,8 @@ app.get("/users", (req, res) => {
   res.send("This is users page");
 });
 
+app.post("/users", (req, res) => {
+  res.send("This is users page: post");
+});
+
 app.listen(3000);
