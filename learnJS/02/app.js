@@ -26,4 +26,8 @@ app.pull("/text", (req, res) => {
   res.send("this is pull");
 });
 
+app.get("/users", (req, res) => {
+  res.send("This is users page");
+});
+
 app.listen(3000);
